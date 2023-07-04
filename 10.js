@@ -1,4 +1,4 @@
-]<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <body>
    <button id="my-button">Click Me</button>
