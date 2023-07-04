@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sum</title>
+</head>
+<body>
+  <h1>Sum</h1>
+  Enter num 1 <input type="number" id="num1">
+  
+  Enter num 2<input type="number" id="num2">
+  
+  <button onclick="calculateSum()">Calculate Sum</button>
+
+  <script>
+    function calculateSum() {
+      // Get the input values
+      var num1 = parseFloat(document.getElementById("num1").value);
+      var num2 = parseFloat(document.getElementById("num2").value);
+
+      // Calculate the sum
+      var sum = num1 + num2;
+
+      // Display the sum using an alert
+      alert("The sum is: " + sum);
+    }
+  </script>
+</body>
+</html>
+
