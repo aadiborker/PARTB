@@ -1,0 +1,73 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  <title>Jump Search</title>
+</head>
+<body>
+  <h1>Jump Search</h1>
+  
+  <label for="keyInput">Enter the key:</label>
+  <input type="number" id="keyInput">
+  
+  <label for="numbersInput">Enter a list of numbers (comma-separated):</label>
+  <input type="text" id="numbersInput">
+  
+  <button id="searchButton">Search</button>
+
+  <script>
+    // Function to perform Jump Search on a sorted array
+    function jumpSearch(arr, key) {
+      var n = arr.length;
+      var step = Math.floor(Math.sqrt(n));
+      var prev = 0;
+
+      // Find the block where the key might be present
+      while (arr[Math.min(step, n) - 1] < key) {
+        prev = step;
+        step += Math.floor(Math.sqrt(n));
+        if (prev >= n) {
+          return -1; // Key not found
+        }
+      }
+
+      // Perform linear search within the block
+      while (arr[prev] < key) {
+        prev++;
+        if (prev === Math.min(step, n)) {
+          return -1; // Key not found
+        }
+      }
+
+      // Check if the key is found
+      if (arr[prev] === key) {
+        return prev; // Key found at index prev
+      }
+
+      return -1; // Key not found
+    }
+
+    // Function to handle the search button click event
+    function performSearch() {
+      // Get the input values
+      var key = parseInt(document.getElementById("keyInput").value);
+      var numbersInput = document.getElementById("numbersInput").value;
+
+      // Convert the comma-separated string to an array of numbers
+      var arr = numbersInput.split(',').map(Number);
+      // Perform Jump Search on the array
+      var result = jumpSearch(arr, key);
+
+      // Display the search result
+      if (result === -1) {
+        alert("Key not found.");
+      } else {
+        alert("Key found at index: " + result);
+      }
+    }
+
+    // Get the search button element
+    var searchButton = document.getElementById("searchButton");
+
+    // Attach an event listener to the search button
+    searchButton.addEventListener("click", performSearch);
+  </script
