@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VTU USN Validation</title>
+</head>
+<body>
+  <h1>VTU USN Validation</h1>
+
+  <label for="usnInput">Enter VTU USN:</label>
+  <input type="text" id="usnInput">
+  <button onclick="validateUSN()">Validate</button>
+
+  <script>
+    // Function to validate VTU USN
+    function validateUSN() {
+      var usn = document.getElementById("usnInput").value;
+      var pattern = /^1[A-Z a-z]{2}[0-9]{2}[A-Z a-z]{2}[0-9]{3}$/;
+
+      if (pattern.test(usn)) {
+        alert("Valid USN");
+      } else {
+        alert("Invalid USN");
+      }
+    }
+  </script>
+</body>
+</html>
