@@ -11,11 +11,9 @@
   <button onclick="validate()">Validate</button>
 
   <script>
-    
-    function validate() {
+  function validate() {
       var em = document.getElementById("usnInput").value;
       var pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
       if (pattern.test(em)) {
         alert("Valid email");
       } else {
