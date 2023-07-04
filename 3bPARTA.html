@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sort Letters in Alphabetical Order</title>
+</head>
+<body>
+  <h1>Sort Letters in Alphabetical Order</h1>
+  
+  <label for="input">Enter a string:</label>
+  <input type="text" id="input">
+  
+  <button id="sortButton">Sort</button>
+
+  <script>
+    // Function to sort the letters in a string in alphabetical order
+    function sortString() {
+      // Get the input value
+      var input = document.getElementById("input").value;
+      
+      // Split the string into an array of characters, sort them, and join them back into a string
+      var sortedString = input.split('').sort().join('');
+      
+      // Display the sorted string in the console
+      alert("Sorted String: " + sortedString);
+    }
+
+    // Get the sort button element
+    var sortButton = document.getElementById("sortButton");
+
+    // Attach an event listener to the sort button
+    sortButton.addEventListener("click", sortString);
+  </script>
+</body>
+</html>
